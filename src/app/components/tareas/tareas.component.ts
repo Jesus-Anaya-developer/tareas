@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { tarea } from 'src/app/models/tarea/tarea';
 
 @Component({
   selector: 'app-tareas',
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./tareas.component.scss']
 })
 export class TareasComponent {
+
+  listTask: tarea[] = [];
+  nameTask: string = '';
+
+  addTask() {
+    //crear objeto tarea
+    const tarea: tarea = {
+      nombre: this.nameTask,
+      estado: false
+    }
+
+    //agregar objeto tarea al array
+    this.listTask.push(tarea);
+
+    //reset form
+    this.nameTask = '';
+
+  }
 
 }
