@@ -17,13 +17,14 @@ export class TareasComponent {
       nombre: this.nameTask,
       estado: false
     }
-
     //agregar objeto tarea al array
     this.listTask.push(tarea);
-
     //reset form
     this.nameTask = '';
+  }
 
+  deleteTask(index: number): void {
+    this.listTask.splice(index, 1);
   }
 
 }

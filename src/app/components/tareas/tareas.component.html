@@ -9,7 +9,11 @@
         <h6>No hay tareas para mostrar</h6>
       </div>
       <ul *ngIf="listTask.length > 0" class="list-group">
-        <li *ngFor="let tarea of listTask" class="list-group-item">{{tarea.nombre}}</li>
+        <li *ngFor="let tarea of listTask; let i = index" class="list-group-item d-flex justify-content-between">
+          <span class="cursor"><i class="fa fa-circle text-success" aria-hidden="true"></i></span>
+          {{tarea.nombre}}
+          <span class="cursor" (click)="deleteTask(i)"><i class="fa fa-trash text-danger" aria-hidden="true"></i></span>
+        </li>
       </ul>
     </div>
   </div>
