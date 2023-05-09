@@ -10,7 +10,8 @@
       </div>
       <ul *ngIf="listTask.length > 0" class="list-group">
         <li *ngFor="let tarea of listTask; let i = index" class="list-group-item d-flex justify-content-between">
-          <span class="cursor"><i class="fa fa-circle text-success" aria-hidden="true"></i></span>
+          <span class="cursor" (click)="uploadTask(tarea,i)"><i class="fa fa-circle"
+              [ngClass]="tarea.estado === false ? 'text-danger' : 'text-success'" aria-hidden="true"></i></span>
           {{tarea.nombre}}
           <span class="cursor" (click)="deleteTask(i)"><i class="fa fa-trash text-danger" aria-hidden="true"></i></span>
         </li>

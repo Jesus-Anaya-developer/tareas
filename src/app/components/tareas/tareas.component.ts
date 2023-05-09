@@ -27,4 +27,8 @@ export class TareasComponent {
     this.listTask.splice(index, 1);
   }
 
+  uploadTask(tarea: tarea, index: number): void {
+    this.listTask[index].estado = !tarea.estado;
+  }
+
 }
